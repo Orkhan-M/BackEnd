@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Blog>
+@foreach (Blog item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+        <div class="single-blog">
+            <div class="blog-img">
+                <a href="blog-details.html"><img src="~/img/blog/@item.Image" alt="blog"></a>
+                <div class="blog-hover">
+                    <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                </div>
+            </div>
+            <div class="blog-content">
+                <div class="blog-top">
+                    <p>@item.Name  /  @item.Date.ToString("dd MMMM yyyy")  /  <i class="fa fa-comments-o"></i> @item.Count</p>
+                </div>
+                <div class="blog-bottom">
+                    <h2><a href="blog-details.html">@item.Title </a></h2>
+                    <a href="@item.Link">read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
